@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mTvViewModel"
+            type="com.example.tmdbmovies.ui.fragment.tv.main.TvViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabFavoriteTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/color_fab"
+            android:clickable="true"
+            android:contentDescription="@string/fab_favorite_tv"
+            android:focusable="true"
+            app:navigateTvToFavoriteTv="@{true}"
+            app:srcCompat="@drawable/ic_favorite"
+            app:tint="@color/color_fab_tint" />
+
+        <ImageView
+            android:id="@+id/ivNoInternet"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/image_no_internet_connection"
+            app:tv_airing_today_entity="@{mTvViewModel.readTvAiringToday}"
+            app:tv_airing_today_response="@{mTvViewModel.tvAiringToday}"
+            app:tv_popular_entity="@{mTvViewModel.readTvPopular}"
+            app:tv_popular_response="@{mTvViewModel.tvPopular}"
+            app:tv_top_rated_entity="@{mTvViewModel.readTvTopRated}"
+            app:tv_top_rated_response="@{mTvViewModel.tvTopRated}"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_no_internet"
+            app:tint="@color/color_image" />
+
+        <TextView
+            android:id="@+id/tvNoInternet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivNoInternet"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            android:text="@string/no_internet_connection"
+            android:textColor="@color/color_image"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:tv_airing_today_entity="@{mTvViewModel.readTvAiringToday}"
+            app:tv_airing_today_response="@{mTvViewModel.tvAiringToday}"
+            app:tv_popular_entity="@{mTvViewModel.readTvPopular}"
+            app:tv_popular_response="@{mTvViewModel.tvPopular}"
+            app:tv_top_rated_entity="@{mTvViewModel.readTvTopRated}"
+            app:tv_top_rated_response="@{mTvViewModel.tvTopRated}"
+            android:visibility="gone" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sTvLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            tools:context="com.planetmovie.ui.tv.TvFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/svTv"
+                    style="@style/SearchTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/ic_style_searchview"
+                    android:outlineProvider="background"
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/svTvImageDummy"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="3dp"
+                    app:navigateTvToSearch="@{true}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvTvThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/on_tv"
+                    android:textColor="@color/color_image"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/svTv" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAiringNow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTvThree" />
+
+                <TextView
+                    android:id="@+id/tvTvOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/top_rated_tv"
+                    android:textColor="@color/color_image"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvAiringNow" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTopRatedTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTvOne" />
+
+                <TextView
+                    android:id="@+id/tvTvTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/popular_tv"
+                    android:textColor="@color/color_image"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvTopRatedTv" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPopularTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTvTwo" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerRvTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/svTv">
+
+                    <include layout="@layout/shimmer_movie_item" />
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

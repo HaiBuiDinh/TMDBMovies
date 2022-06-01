@@ -1,4 +1,4 @@
-package com.planetmovie.data.remote.model
+package com.example.tmdbmovies.data.remote.model
 
 
 import com.google.gson.annotations.SerializedName

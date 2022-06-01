@@ -13,4 +13,20 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="SearchMovie" parent="Widget.AppCompat.SearchView">
+        <item name="background">@color/color_card_background</item>
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="queryHint">Search Movie...</item>
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="elevation">3dp</item>
+    </style>
+
+    <style name="SearchTv" parent="Widget.AppCompat.SearchView">
+        <item name="background">@color/color_card_background</item>
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="queryHint">Search Tv...</item>
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="elevation">3dp</item>
+    </style>
 </resources>

@@ -9,8 +9,43 @@
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
+
+        <item name="actionModeStyle">@style/MyActionMode</item>
+        <item name="actionModeCloseButtonStyle">@style/myCloseActionMode</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_black</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="SearchMovie" parent="Widget.AppCompat.SearchView">
+        <item name="background">@color/color_card_background</item>
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="queryHint">Search Movie...</item>
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="elevation">10dp</item>
+    </style>
+
+    <style name="SearchTv" parent="Widget.AppCompat.SearchView">
+        <item name="background">@color/color_card_background</item>
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="queryHint">Search Tv...</item>
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="elevation">3dp</item>
+    </style>
+
+    <style name="MyActionMode" parent="Base.Widget.AppCompat.ActionMode">
+        <item name="background">@color/black</item>
+        <item name="backgroundTint">@color/black</item>
+        <item name="titleTextStyle">@style/MyActionModeTitleTextStyle</item>
+    </style>
+
+    <style name="MyActionModeTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionMode.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="myCloseActionMode" parent="Widget.AppCompat.ActionButton.CloseMode">
+        <item name="android:tint">@color/white</item>
+    </style>
+
 </resources>

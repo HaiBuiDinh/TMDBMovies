@@ -1,8 +1,6 @@
 package com.example.tmdbmovies.data.remote.model
 
 import com.google.gson.annotations.SerializedName
-import com.planetmovie.data.remote.model.MovieCredits
-import com.planetmovie.data.remote.model.MovieGenre
 
 data class MovieDetailResponse(
     @SerializedName("id") val id: Int,
@@ -22,5 +20,7 @@ data class MovieDetailResponse(
     @SerializedName("title") val title: String,
     @SerializedName("vote_average") val voteAverage: Double,
     @SerializedName("vote_count") val voteCount: Int,
+    @SerializedName("first_air_date") val tvFirstAirDate: String,
+    @SerializedName("name") val tvName: String,
 
     )

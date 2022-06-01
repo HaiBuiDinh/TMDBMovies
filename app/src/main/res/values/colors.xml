@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_500">#000000</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- LIGHT THEME COLOR -->
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="color_icon_unfavorite">#FFFFFF</color>
+    <color name="color_icon_favorite">#FF0000</color>
+    <color name="color_icon">#000000</color>
+    <color name="color_outline_search">#000a12</color>
+    <color name="color_gradient">#484848</color>
+    <color name="color_card_background">#DFD3D3</color>
+    <color name="color_card_shadow">#272a28</color>
+    <color name="color_text">#111127</color>
+    <color name="color_text_card_list">#ffffff</color>
+    <color name="color_background">#ffffff</color>
+    <color name="color_bottom_navigation">#263238</color>
+    <color name="color_card_stroke">#66000000</color>
+    <color name="color_card_unstroke">#272626</color>
+    <color name="color_card_selected">#66000000</color>
+    <color name="color_card_unselected">#DFD3D3</color>
+    <color name="color_appbar">#263238</color>
+    <color name="color_status_bar">#000a12</color>
+    <color name="color_fab">#1b144d</color>
+    <color name="color_fab_tint">#ffffff</color>
+    <color name="color_image">#414144</color>
+    <color name="color_shimmer">#26262A</color>
+    <color name="color_shimmer_two">#2C2828</color>
 </resources>

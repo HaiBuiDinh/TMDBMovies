@@ -7,7 +7,7 @@ import com.example.tmdbmovies.util.Constants.Companion.TV_AIRING_TODAY_TABLE
 
 @Entity(tableName = TV_AIRING_TODAY_TABLE)
 class TvAiringTodayEntity(
-    var tvAiringTodayEntity: MovieResponse
+    var tvAiringTodayData: MovieResponse
 ) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0

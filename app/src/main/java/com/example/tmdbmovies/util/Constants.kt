@@ -5,6 +5,13 @@ class Constants {
         const val API_KEY = "b223e5bc9cbd007e34997430d75efd31"
 
         const val BASE_URL = "https://api.themoviedb.org/3/"
+        const val BASE_IMG_URL_BACKDROP = "https://image.tmdb.org/t/p/w780/"
+        const val BASE_IMG_URL_POSTER = "https://image.tmdb.org/t/p/w342/"
+        const val BASE_IMG_URL_CAST = "https://image.tmdb.org/t/p/w185/"
+        const val BASE_TRAILER_URL = "https://www.youtube.com/watch?v="
+        const val BASE_TRAILER_URL_APP = "vnd.youtube:"
+        const val BASE_TRAILER_THUMBNAIL = "https://img.youtube.com/vi/"
+        const val BASE_TRAILER_THUMBNAIL_END = "/hqdefault.jpg"
 
         //QUERY
         const val QUERY_PAGE = "page"

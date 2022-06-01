@@ -1,4 +1,4 @@
-package com.planetmovie.data.local.entity
+package com.example.tmdbmovies.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
