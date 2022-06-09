@@ -13,7 +13,7 @@
         android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_person"
+        android:src="@drawable/icon_about"
         app:civ_border_color="@color/color_card_selected"
         app:civ_border_width="1dp"
         app:civ_shadow="true"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageViewAbout"
         android:layout_centerInParent="true"
-        android:text="@string/planet_movie"
+        android:text="TMDB Movies"
         android:textColor="@color/color_text"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -40,7 +40,7 @@
         android:gravity="center"
         android:text="@string/all_movie_and_tv_data_provided_by_themoviedb_org"
         android:textColor="@color/color_text"
-        android:textSize="20sp"
-        android:textStyle="italic" />
+        android:textSize="16sp"
+        android:textStyle="bold"/>
 
 </RelativeLayout>

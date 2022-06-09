@@ -1,6 +1,7 @@
 package com.example.tmdbmovies.ui.adapter
 
 import android.view.*
+import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
@@ -44,6 +45,7 @@ class ItemFavoriteTvAdapter(
         viewHolder.add(holder)
         rootView = holder.itemView.rootView
 
+        holder.itemView.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.left_to_right_animation)
         val currentFavorite = tvFavoriteEntity[position]
         holder.bind(currentFavorite)
 

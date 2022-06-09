@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.tmdbmovies.R
@@ -27,7 +28,15 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
     ): View? {
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        animationView()
         return view
+    }
+
+    private fun animationView() {
+        binding.imageViewAbout.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.avatar_about_animation)
+        binding.textAbout.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.text_about_animation)
+        binding.text2About.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.text_about_animation)
     }
 
     override fun onResume() {

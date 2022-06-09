@@ -1,13 +1,17 @@
 package com.example.tmdbmovies.ui.fragment.tv.main
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.tmdbmovies.R
 import com.example.tmdbmovies.data.local.Resource
+import com.example.tmdbmovies.databinding.FragmentMovieBinding
 import com.example.tmdbmovies.databinding.FragmentTvBinding
 import com.example.tmdbmovies.ui.SharedViewModel
 import com.example.tmdbmovies.ui.adapter.ItemTvListAdapter
@@ -42,19 +46,30 @@ class TvFragment : Fragment(R.layout.fragment_tv) {
     //Shimmer
     private var isShimmerLoading: Boolean = false
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentTvBinding.bind(view)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentTvBinding.inflate(inflater, container, false)
+        val view = binding.root
         binding.lifecycleOwner = viewLifecycleOwner
         binding.mTvViewModel = mTvViewModel
 
+        startAnimation()
         initRecyclerView()
         readBackOnline()
+        return view
     }
 
     override fun onResume() {
         super.onResume()
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+    private fun startAnimation() {
+        binding.svTv.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.search_view_animation)
+        binding.fabFavoriteTv.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.float_button_animation)
     }
 
     private fun initRecyclerView() {
@@ -194,8 +209,11 @@ class TvFragment : Fragment(R.layout.fragment_tv) {
                 shimmerRvTv.stopShimmer()
                 shimmerRvTv.visibility = View.GONE
                 tvTvOne.visibility = View.VISIBLE
+                tvTvOne.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.left_to_right_animation)
                 tvTvTwo.visibility = View.VISIBLE
+                tvTvTwo.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.left_to_right_animation)
                 tvTvThree.visibility = View.VISIBLE
+                tvTvThree.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.left_to_right_animation)
                 rvAiringNow.visibility = View.VISIBLE
                 rvPopularTv.visibility = View.VISIBLE
                 rvTopRatedTv.visibility = View.VISIBLE

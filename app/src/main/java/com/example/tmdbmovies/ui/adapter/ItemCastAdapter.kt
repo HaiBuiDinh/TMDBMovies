@@ -2,8 +2,10 @@ package com.example.tmdbmovies.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tmdbmovies.R
 import com.example.tmdbmovies.data.remote.model.MovieCast
 import com.example.tmdbmovies.data.remote.model.MovieCredits
 import com.example.tmdbmovies.databinding.ItemCastBinding
@@ -28,6 +30,7 @@ class ItemCastAdapter: RecyclerView.Adapter<ItemCastAdapter.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.itemView.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.fade_down_transition_animation)
         val castDetail = movieCast[position]
         holder.bind(castDetail)
     }

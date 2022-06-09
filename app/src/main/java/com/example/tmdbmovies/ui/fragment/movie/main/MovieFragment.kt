@@ -1,7 +1,10 @@
 package com.example.tmdbmovies.ui.fragment.movie.main
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -45,21 +48,30 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
     //Shimmer loading
     private var isShimmerLoading: Boolean = false
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentMovieBinding.bind(view)
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentMovieBinding.inflate(inflater, container, false)
+        val view = binding.root
         binding.lifecycleOwner = viewLifecycleOwner
         binding.mMovieViewModel = mMovieViewModel
 
-
+        startAnimation()
         initRecyclerView()
         readBackOnline()
+        return view
     }
 
     override fun onResume() {
         super.onResume()
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+    private fun startAnimation() {
+        binding.svMovie.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.search_view_animation)
+        binding.fabFavoriteMovie.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.float_button_animation)
     }
 
     private fun initRecyclerView() {
@@ -223,8 +235,11 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
                 shimmerRvMovie.stopShimmer()
                 shimmerRvMovie.visibility = View.GONE
                 tvMovieOne.visibility = View.VISIBLE
+                tvMovieOne.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.left_to_right_animation)
                 tvMovieTwo.visibility = View.VISIBLE
+                tvMovieTwo.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.left_to_right_animation)
                 tvMovieThree.visibility = View.VISIBLE
+                tvMovieThree.animation = AnimationUtils.loadAnimation(requireContext(), R.anim.left_to_right_animation)
                 rvPopularMovie.visibility = View.VISIBLE
                 rvUpcomingMovie.visibility = View.VISIBLE
                 rvNowPlaying.visibility = View.VISIBLE

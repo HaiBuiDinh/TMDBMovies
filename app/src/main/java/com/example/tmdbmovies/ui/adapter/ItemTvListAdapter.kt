@@ -2,8 +2,10 @@ package com.example.tmdbmovies.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tmdbmovies.R
 import com.example.tmdbmovies.data.remote.model.MovieResponse
 import com.example.tmdbmovies.data.remote.model.MovieResult
 import com.example.tmdbmovies.databinding.ItemListTvBinding
@@ -26,6 +28,7 @@ class ItemTvListAdapter: RecyclerView.Adapter<ItemTvListAdapter.MyViewMHolder>()
     }
 
     override fun onBindViewHolder(holder: MyViewMHolder, position: Int) {
+        holder.itemView.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.fade_down_transition_animation)
         val currentTv = tvResult[position]
         holder.bind(currentTv)
     }

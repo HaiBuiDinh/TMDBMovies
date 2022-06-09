@@ -2,8 +2,10 @@ package com.example.tmdbmovies.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tmdbmovies.R
 import com.example.tmdbmovies.data.remote.model.MovieResponse
 import com.example.tmdbmovies.data.remote.model.MovieResult
 import com.example.tmdbmovies.databinding.ItemSearchTvBinding
@@ -26,6 +28,7 @@ class ItemSearchTvAdapter: RecyclerView.Adapter<ItemSearchTvAdapter.MyViewHolder
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.itemView.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.left_to_right_animation)
         val searchResult = searchTvResult[position]
         holder.bind(searchResult)
     }
