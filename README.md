@@ -1,8 +1,8 @@
 # Pokemon Dictionary 
-Pokemon Dictionary is an application that displays a list of pokemon from the API: https://pokeapi.co/ . The application applies the Paging 3 library to load data. In addition, the application also uses Hilt-Dagger, Navigation Component.
+TMDB Movie is an application that displays a list of movie and tv show from the API: https://api.themoviedb.org . The application applies MVVM, Hilt-Dagger, Navigation Component, Data Store, Data binding, View Bingding,....
 
 # Overview
 ![ScreenShot](/docs/Capture.PNG)
 
 # Download test apk:
-* [PokemonDictionary.apk](/raw/main/docs/TMDBMovie.apk)
+* [TMDBMovie.apk](/raw/main/docs/TMDBMovie.apk)
