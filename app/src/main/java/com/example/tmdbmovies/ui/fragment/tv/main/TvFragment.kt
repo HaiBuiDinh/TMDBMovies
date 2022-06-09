@@ -52,6 +52,10 @@ class TvFragment : Fragment(R.layout.fragment_tv) {
         readBackOnline()
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
 
     private fun initRecyclerView() {
         binding.rvAiringNow.apply {
@@ -229,11 +233,6 @@ class TvFragment : Fragment(R.layout.fragment_tv) {
         }
     }
 
-//    override fun onResume() {
-//        super.onResume()
-//        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-//    }
-//
 //    override fun onStop() {
 //        super.onStop()
 //        (activity as AppCompatActivity?)!!.supportActionBar!!.show()

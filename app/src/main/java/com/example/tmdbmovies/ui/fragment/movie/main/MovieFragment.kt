@@ -45,7 +45,6 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
     //Shimmer loading
     private var isShimmerLoading: Boolean = false
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentMovieBinding.bind(view)
@@ -58,10 +57,10 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         readBackOnline()
     }
 
-//    override fun onResume() {
-//        super.onResume()
-//        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-//    }
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
 
     private fun initRecyclerView() {
         binding.rvNowPlaying.apply {

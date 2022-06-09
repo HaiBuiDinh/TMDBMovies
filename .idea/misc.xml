@@ -3,7 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/layout/fragment_movie.xml" value="0.190625" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/drawable-v24/ic_favorite.xml" value="0.1515" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/drawable/ic_favorite.xml" value="0.1515" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/drawable/ic_favorite_svgrepo.xml" value="0.1515" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/drawable/ic_movie_svgrepo_com.xml" value="0.2175" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/drawable/ic_tv_bottom.xml" value="0.1515" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/layout/fragment_about.xml" value="0.25625" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/layout/fragment_movie.xml" value="0.33" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/layout/fragment_movie_detail.xml" value="0.25625" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/layout/fragment_search_movie.xml" value="0.25625" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/layout/fragment_tv.xml" value="0.25625" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/layout/fragment_tv_detail.xml" value="0.25625" />
+        <entry key="..\:/FromSSToHome/TMDBMovies/TMDBMovies/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.25625" />
       </map>
     </option>
   </component>

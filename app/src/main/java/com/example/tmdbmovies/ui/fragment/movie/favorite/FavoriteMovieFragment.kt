@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,6 +38,11 @@ class FavoriteMovieFragment : Fragment(R.layout.fragment_favorite_movie) {
         initDataBinding()
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
     private fun initRecyclerView() {
         binding.rvFavoriteMovie.apply {
             mFavoriteMovieAdapter = ItemFavoriteMovieAdapter(requireActivity(), mFavoriteViewModel)
@@ -50,6 +56,11 @@ class FavoriteMovieFragment : Fragment(R.layout.fragment_favorite_movie) {
         binding.favMovieViewModel = mFavoriteViewModel
         binding.mFavMovieAdapter = mFavoriteMovieAdapter
     }
+
+//    override fun onStop() {
+//        super.onStop()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+//    }
 
     override fun onDestroy() {
         super.onDestroy()

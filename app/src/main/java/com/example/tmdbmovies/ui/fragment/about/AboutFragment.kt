@@ -30,6 +30,15 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+//    override fun onStop() {
+//        super.onStop()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+//    }
 
     override fun onDestroy() {
         super.onDestroy()

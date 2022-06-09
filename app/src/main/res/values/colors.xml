@@ -12,7 +12,7 @@
     <color name="color_white">#FFFFFF</color>
     <color name="color_black">#000000</color>
     <color name="color_icon_unfavorite">#FFFFFF</color>
-    <color name="color_icon_favorite">#FF0000</color>
+    <color name="color_icon_favorite">#FFF176</color>
     <color name="color_icon">#000000</color>
     <color name="color_outline_search">#000a12</color>
     <color name="color_gradient">#484848</color>
@@ -28,7 +28,7 @@
     <color name="color_card_unselected">#DFD3D3</color>
     <color name="color_appbar">#263238</color>
     <color name="color_status_bar">#000a12</color>
-    <color name="color_fab">#1b144d</color>
+    <color name="color_fab">#E57373</color>
     <color name="color_fab_tint">#ffffff</color>
     <color name="color_image">#414144</color>
     <color name="color_shimmer">#26262A</color>

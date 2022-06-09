@@ -61,7 +61,7 @@
             android:contentDescription="@string/fab_movie"
             android:focusable="true"
             app:navigateMovieToFavoriteMovie="@{true}"
-            app:srcCompat="@drawable/ic_favorite"
+            app:srcCompat="@drawable/ic_favorite_svgrepo"
             app:tint="@color/color_fab_tint" />
 
         <androidx.core.widget.NestedScrollView

@@ -12,7 +12,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabFavoriteTv"
@@ -26,7 +27,7 @@
             android:contentDescription="@string/fab_favorite_tv"
             android:focusable="true"
             app:navigateTvToFavoriteTv="@{true}"
-            app:srcCompat="@drawable/ic_favorite"
+            app:srcCompat="@drawable/ic_favorite_svgrepo"
             app:tint="@color/color_fab_tint" />
 
         <ImageView
